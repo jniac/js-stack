@@ -4,7 +4,15 @@
 
 example:
 ```javascript
+import { Stack } from './stack.js'
 
+let stack = new Stack()
+
+let callback = stack.add(() => console.log('hello there'))
+
+stack.execute()
+
+stack.remove(callback)
 ```
 
 
