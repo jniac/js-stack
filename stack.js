@@ -44,7 +44,8 @@ class Stack {
 		let array = Stack.weakMap.get(this)
 		let tmp = array.concat()
 
-		// dump array
+		// dump array and execute the callbacks
+		// callbacks that do not return false are kept to the next execution
 		array.length = 0
 		array.unshift.apply(array, tmp.filter(callback => callback.apply(thisArg, params) != false))
 
