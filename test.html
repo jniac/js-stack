@@ -7,9 +7,41 @@
 
 <script type="module">
 
-import { Stack } from '../stack.js'
+import { Stack } from './stack.js'
 
-console.log(Stack)
+let stack = new Stack()
+
+stack.add(() => console.log('\nstack.execute:'))
+
+let callback = stack.add(() => console.log('hello there!'))
+
+stack.execute()
+stack.execute()
+stack.execute()
+
+let callback2 = stack.add(() => console.log('fine?'))
+
+stack.execute()
+
+stack.remove(callback)
+
+stack.execute()
+
+function genericCallback() {
+
+	console.log('generic callback', performance.now())
+
+}
+
+stack.add(genericCallback)
+stack.add(genericCallback)
+stack.add(genericCallback)
+
+stack.execute()
+
+console.log('remove:', stack.remove(genericCallback))
+
+stack.execute()
 
 </script>
 

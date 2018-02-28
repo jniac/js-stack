@@ -5,6 +5,15 @@
 example:
 ```javascript
 
+```
+
+
+
+
+
+test:
+```javascript
+
 let stack = new Stack()
 stack.add(() => console.log(`i'm the first!`))
 let f = stack.add((function(){
