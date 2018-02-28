@@ -12,7 +12,9 @@ import { Stack } from './stack.js'
 let stack = new Stack()
 
 function foo() {
+
 	console.log('bar')
+	
 }
 
 stack.add(foo)
