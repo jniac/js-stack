@@ -1,4 +1,6 @@
-class Stack {
+// https://github.com/jniac/js-stack
+
+export class Stack {
 
 	constructor() {
 
