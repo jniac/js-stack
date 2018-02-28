@@ -53,6 +53,15 @@ export class Stack {
 
 	}
 
+	dump({ params = null, thisArg = null } = {}) {
+
+		for (let callback of Stack.weakMap.get(this))
+			callback.apply(thisArg, params)
+
+		this.clear()
+
+	}
+
 	dumpWhile(duration, { params = null, thisArg = null, now = null } = {}) {
 
 		let array = Stack.weakMap.get(this)
