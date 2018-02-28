@@ -1,5 +1,7 @@
 # js-stack
 
+[test.html](http://htmlpreview.github.io/?https://github.com/jniac/js-stack/blob/master/test.html)
+
 example:
 ```javascript
 
