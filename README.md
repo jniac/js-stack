@@ -13,7 +13,7 @@ let stack = new Stack()
 
 function foo() {
 
-	console.log('bar')
+	console.log('foo!')
 	
 }
 
@@ -21,12 +21,12 @@ stack.add(foo)
 
 let callback = stack.add(() => console.log('hello there'))
 
-stack.execute()
+stack.execute() // print "foo!", "hello there"
 
 stack.remove(foo)
 stack.remove(callback)
 
-stack.execute()
+stack.execute() // nothing happened
 ```
 
 
