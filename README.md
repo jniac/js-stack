@@ -1,7 +1,7 @@
 # js-stack
 
-minimal js line to provide an execution stack (an array of callbacks)
-functional, **but** must have on look on performance, `dumpWhile` is very slow (for the time being, Stack.dumpWhile is not performance oriented but convenience oriented)) 
+minimal js line to provide an execution stack (an array of callbacks)  
+functional, **but** must have a look on performance, `dumpWhile` is very slow (for the time being, Stack.dumpWhile is not performance oriented but convenience oriented)) 
 
 [test.html](http://htmlpreview.github.io/?https://github.com/jniac/js-stack/test.html)
 
