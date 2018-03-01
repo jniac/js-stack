@@ -43,6 +43,21 @@ console.log('remove:', stack.remove(genericCallback))
 
 stack.execute()
 
+
+
+stack.clear()
+
+console.log('')
+
+let callbacks = stack.add(() => console.log('first'), () => console.log('second'), () => console.log('third'))
+
+stack.execute() // prints "first", "second", "third"
+
+stack.remove(...callbacks)
+
+stack.execute() // nothing happened
+
+
 </script>
 
 </body>

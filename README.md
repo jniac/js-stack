@@ -21,7 +21,7 @@ stack.add(foo)
 
 let [callback] = stack.add(() => console.log('hello there'))
 
-stack.execute() // print "foo!", "hello there"
+stack.execute() // prints "foo!", "hello there"
 
 stack.remove(foo)
 stack.remove(callback)
@@ -37,7 +37,7 @@ let stack = new Stack()
 
 let callbacks = stack.add(() => console.log('first'), () => console.log('second'), () => console.log('third'))
 
-stack.execute() // print "first", "second", "third"
+stack.execute() // prints "first", "second", "third"
 
 stack.remove(...callbacks)
 
