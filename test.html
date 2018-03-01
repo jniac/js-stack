@@ -58,6 +58,17 @@ stack.remove(...callbacks)
 stack.execute() // nothing happened
 
 
+console.log('\nundefined test:')
+
+let bob
+stack.add(undefined)
+stack.add(bob)
+
+console.log('length:', stack.length)
+
+stack.execute() // nothing happened
+
+
 </script>
 
 </body>

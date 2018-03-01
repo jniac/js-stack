@@ -13,6 +13,8 @@ export class Stack {
 
 	add(...callbacks) {
 
+		callbacks = callbacks.filter(v => v)
+
 		Stack.weakMap.get(this).push(...callbacks)
 
 		return callbacks

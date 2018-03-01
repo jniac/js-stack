@@ -44,8 +44,23 @@ stack.remove(...callbacks)
 stack.execute() // nothing happened
 ```
 
+### undefined will be ignored
+
+```javascript
+
+let { callback } = object
+
+stack.add(callback) // even if callback is still undefined
+
+stack.execute() // no errors
+
+```
 
 
+  
+  
+  
+  
 
 test:
 ```javascript
