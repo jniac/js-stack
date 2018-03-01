@@ -13,7 +13,7 @@ let stack = new Stack()
 
 stack.add(() => console.log('\nstack.execute:'))
 
-let callback = stack.add(() => console.log('hello there!'))
+let [callback] = stack.add(() => console.log('hello there!'))
 
 stack.execute()
 stack.execute()

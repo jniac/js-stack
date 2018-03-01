@@ -19,7 +19,7 @@ function foo() {
 
 stack.add(foo)
 
-let callback = stack.add(() => console.log('hello there'))
+let [callback] = stack.add(() => console.log('hello there'))
 
 stack.execute() // print "foo!", "hello there"
 
@@ -29,6 +29,20 @@ stack.remove(callback)
 stack.execute() // nothing happened
 ```
 
+### one or more pattern
+stack.add() & stack.remove() can take one or more arguments:
+
+```javascript
+let stack = new Stack()
+
+let callbacks = stack.add(() => console.log('first'), () => console.log('second'), () => console.log('third'))
+
+stack.execute() // print "first", "second", "third"
+
+stack.remove(...callbacks)
+
+stack.execute() // nothing happened
+```
 
 
 

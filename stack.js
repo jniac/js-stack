@@ -11,29 +11,33 @@ export class Stack {
 
 	}
 
-	add(callback) {
+	add(...callbacks) {
 
-		Stack.weakMap.get(this).push(callback)
+		Stack.weakMap.get(this).push(...callbacks)
 
-		return callback
+		return callbacks
 
 	}
 
-	remove(callback) {
+	remove(...callbacks) {
 
 		let array = Stack.weakMap.get(this)
 		let count = 0
 		
-		while (true) {
+		for (let callback of callbacks) {
 
-			let index = array.indexOf(callback)
+			while (true) {
 
-			if (index === -1)
-				break
+				let index = array.indexOf(callback)
 
-			array.splice(index, 1)
+				if (index === -1)
+					break
 
-			count++
+				array.splice(index, 1)
+
+				count++
+
+			}
 
 		}
 
