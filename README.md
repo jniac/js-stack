@@ -5,7 +5,7 @@ functional, **but** must have a look on performance, `dumpWhile` is very slow (f
 
 <!--[test.html](http://htmlpreview.github.io/?https://github.com/jniac/js-stack/test.html)-->
 
-### basic usage:
+### basic usage
 ```javascript
 import { Stack } from './stack.js'
 
@@ -47,10 +47,11 @@ stack.execute() // nothing happened
 ### undefined will be ignored
 
 ```javascript
+let object = { }
 
 let { callback } = object
 
-stack.add(callback) // even if callback is still undefined
+stack.add(callback)
 
 stack.execute() // no errors
 
