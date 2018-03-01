@@ -3,9 +3,9 @@
 minimal js line to provide an execution stack (an array of callbacks)  
 functional, **but** must have a look on performance, `dumpWhile` is very slow (for the time being, Stack.dumpWhile is not performance oriented but convenience oriented)) 
 
-[test.html](http://htmlpreview.github.io/?https://github.com/jniac/js-stack/test.html)
+<!--[test.html](http://htmlpreview.github.io/?https://github.com/jniac/js-stack/test.html)-->
 
-example:
+### basic usage:
 ```javascript
 import { Stack } from './stack.js'
 
@@ -60,8 +60,8 @@ stack.execute() // no errors
   
   
   
-  
 
+<!--
 test:
 ```javascript
 
@@ -98,3 +98,4 @@ console.log(stack.length)
 stack.dumpWhile(100, { params: [Math.E] })
 console.log(stack.length)
 ```
+-->
