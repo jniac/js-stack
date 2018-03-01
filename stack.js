@@ -51,6 +51,8 @@ export class Stack {
 		array.length = 0
 		array.unshift.apply(array, tmp.filter(callback => callback.apply(thisArg, params) != false))
 
+		return this
+
 	}
 
 	dump({ params = null, thisArg = null } = {}) {
@@ -59,6 +61,16 @@ export class Stack {
 			callback.apply(thisArg, params)
 
 		this.clear()
+
+		return this
+
+	}
+
+	clear() {
+
+		Stack.weakMap.get(this).length = 0
+
+		return this
 
 	}
 
@@ -72,12 +84,6 @@ export class Stack {
 			array.shift().apply(thisArg, params)
 
 		return performance.now() - t
-
-	}
-
-	clear() {
-
-		Stack.weakMap.get(this).length = 0
 
 	}
 
