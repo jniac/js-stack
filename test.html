@@ -69,6 +69,24 @@ console.log('length:', stack.length)
 stack.execute() // nothing happened
 
 
+stack.clear()
+console.log('\nargs test')
+
+stack.add((...args) => console.log(args.join('-')))
+stack.execute({ args: ['how', 'are', 'you', '?'] })
+console.log('has print: how-are-you-?')
+
+stack.clear()
+console.log('\nthisArg test')
+
+stack.add(function() {
+	console.log(this.constructor.name)
+})
+stack.execute({ thisArg: new class Foo{} })
+console.log('has print: Foo')
+
+
+
 </script>
 
 </body>
