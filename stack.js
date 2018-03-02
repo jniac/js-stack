@@ -47,7 +47,7 @@ export class Stack {
 
 	}
 
-	execute({ params = null, thisArg = null } = {}) {
+	execute({ args = null, thisArg = null } = {}) {
 
 		let array = Stack.weakMap.get(this)
 		let tmp = array.concat()
@@ -55,16 +55,16 @@ export class Stack {
 		// dump array and execute the callbacks
 		// callbacks that do not return false are kept to the next execution
 		array.length = 0
-		array.unshift.apply(array, tmp.filter(callback => callback.apply(thisArg, params) != false))
+		array.unshift.apply(array, tmp.filter(callback => callback.apply(thisArg, args) != false))
 
 		return this
 
 	}
 
-	dump({ params = null, thisArg = null } = {}) {
+	dump({ args = null, thisArg = null } = {}) {
 
 		for (let callback of Stack.weakMap.get(this))
-			callback.apply(thisArg, params)
+			callback.apply(thisArg, args)
 
 		this.clear()
 
@@ -80,14 +80,14 @@ export class Stack {
 
 	}
 
-	dumpWhile(duration, { params = null, thisArg = null, now = null } = {}) {
+	dumpWhile(duration, { args = null, thisArg = null, now = null } = {}) {
 
 		let array = Stack.weakMap.get(this)
 
 		let t = performance.now()
 
 		while (performance.now() - t < duration && array.length)
-			array.shift().apply(thisArg, params)
+			array.shift().apply(thisArg, args)
 
 		return performance.now() - t
 
